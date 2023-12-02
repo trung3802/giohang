@@ -27,5 +27,9 @@ function loadall_donhang(){
     $listdonhang=pdo_query($sql);
     return $listdonhang;
 }
-
+function loadall_thongtin(){
+    $sql="SELECT * FROM user order by id desc";
+    $thongtin=pdo_query($sql);
+    return $thongtin;
+}
 ?>

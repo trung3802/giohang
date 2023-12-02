@@ -44,8 +44,10 @@
                                 <td><?php echo $cart['status']; ?></td>
                                 <td>
                 <?php
-                if ($cart['status'] === 'Pending' || 'Đang Giao') {
+                if ($cart['status'] === 'Pending' ) {
                     echo '<button type="button" style="margin-bottom: 10px;" class="btn btn-success" onclick="confirmOrder(' . $cart['id'] . ')">Đang giao</button>';
+                    
+                }elseif ($cart['status'] === 'Đang giao') {
                     echo '<button type="button" class="btn btn-success" onclick="confirmOrder1(' . $cart['id'] . ')">Hoàn Thành</button>';
                 }
                 ?>

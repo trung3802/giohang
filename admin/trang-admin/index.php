@@ -130,6 +130,10 @@
                                         $listdonhang=loadall_donhang();
                                         include "../donhang/list.php";
                                     break;
+                                    case 'dstt':
+                                        $thongtin=loadall_thongtin();
+                                        include "../donhang/list.php";
+                                    break;
                     
                     
                     // DANH MỤC 
