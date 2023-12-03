@@ -26,6 +26,7 @@ include "header.php";
                     <th style="padding: 10px;">Sản phẩm</th>
                     <th style="padding: 10px;">Giá</th>
                     <th style="padding: 10px;">Số Lượng</th>
+                    <th style="padding: 10px;">Phương thức</th>
                     <th style="padding: 10px;">Thành Tiền</th>
                     <th style="padding: 10px;">Trạng Thái</th>
                     <th style="padding: 10px;">Chức Năng</th>
@@ -37,6 +38,7 @@ include "header.php";
                         <td style="padding: 10px;"><?php echo $row['name']; ?></td>
                         <td style="padding: 10px;"><?php echo $row['price']; ?></td>
                         <td style="padding: 10px;"><?php echo $row['soluong']; ?></td>
+                        <td style="padding: 10px;"><?php echo $row['phuongthuc'] == 1 ? 'Tiền mặt' : 'Chuyển khoản'; ?></td>
                         <td style="padding: 10px;"><?php echo $row['thanhtien']; ?></td>
                         <td style="padding: 10px;"><?php echo $row['status']; ?></td>
                         <td style="padding: 10px;"><button type="button" class="btn btn-warning" onclick="deleteOrder(<?php echo $row['id']; ?>)">Huỷ</button></td>

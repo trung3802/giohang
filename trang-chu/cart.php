@@ -116,10 +116,20 @@
                         <a class="btn btn-block btn-light" href="index.php">Tiếp tục mua hàng</a>
                     </div>
                     <div class="col-sm-12 col-md-6 text-right">
-                        <button type="submit" name="place_order" class="btn btn-lg btn-block btn-success text-uppercase">
+                        <button type="submit" name="place_order" onclick="confirmsuccess()" class="btn btn-lg btn-block btn-success text-uppercase">
                             Đặt hàng
                         </button>
                     </div>
+                    <script>
+    function confirmsuccess(cartId) {
+        var isConfirmed = confirm("Đặt hàng thành công ! Thank you for shopping . ");
+
+        if (isConfirmed) {
+            window.location.href = "index.php";
+        }
+    }
+</script>
+
                 </div>
             </div>
         </div>
