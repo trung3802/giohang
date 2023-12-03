@@ -10,15 +10,14 @@
                     <thead class="thead-dark">
                         <tr>
                             <th>ID</th>
-                            <th>ID Người Dùng</th>
-                            <th>ID Sản Phẩm</th>
                             <th>Hình Ảnh</th>
                             <th>Tên Sản Phẩm</th>
                             <th>Giá</th>
                             <th>Số Lượng</th>
                             <th>Thành Tiền</th>
-                            <th>ID Hóa Đơn</th>
-                            <th>Trạng thái</th>
+                            <th>Thông tin khách hàng</th>
+                            <th>Thanh Toán</th>
+                            <th>Trạng Thái</th>
                             <th>Xác nhận đơn hàng</th>
                             <th>Chức Năng</th>
                             
@@ -32,15 +31,23 @@
                             foreach ($listdonhang as $cart) : ?>
                             <tr>
                                 <td><?php echo $cart['id']; ?></td>
-                                <td><?php echo $cart['iduser']; ?></td>
-                                <td><?php echo $cart['idpro']; ?></td>
                                 <!-- <td><img src="<?php echo $cart['hinh']; ?>" style="width: 50px;"></td> -->
                                 <td><img src="../upload/<?php echo $cart['hinh']; ?>" style="width: 50px;"></td>
                                 <td><?php echo $cart['name']; ?></td>
                                 <td><?php echo $cart['price']; ?></td>
                                 <td><?php echo $cart['soluong']; ?></td>
                                 <td><?php echo $cart['thanhtien']; ?></td>
-                                <td><?php echo $cart['idbill']; ?></td>
+                                <td>
+                                <?php echo $cart['user']; ?><br>
+    <?php echo $cart['email']; ?><br>
+    <?php echo $cart['sdt']; ?><br>
+    <?php echo $cart['diachi']; ?>
+</td>
+
+<td><?php
+    
+    echo $cart['phuongthuc'] == 1 ? 'Tiền mặt' : 'Chuyển khoản';
+    ?></td>
                                 <td><?php echo $cart['status']; ?></td>
                                 <td>
                 <?php
@@ -55,6 +62,7 @@
                                 <td>
                                     
                                         <button type="button" class="btn btn-danger" onclick="confirmDelete(<?php echo $cart['id']; ?>)">Xóa</button>
+                                        
                                 </td>
                             </tr>
                             <?php endforeach;

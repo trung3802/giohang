@@ -22,14 +22,22 @@ function loadall_taikhoan(){
     $listtaikhoan=pdo_query($sql);
     return $listtaikhoan;
 }
-function loadall_donhang(){
-    $sql="SELECT * FROM cart order by id desc";
-    $listdonhang=pdo_query($sql);
-    return $listdonhang;
-}
+// function loadall_donhang(){
+//     $sql="SELECT * FROM cart order by id desc";
+//     $listdonhang=pdo_query($sql);
+//     return $listdonhang;
+// }
 function loadall_thongtin(){
     $sql="SELECT * FROM user order by id desc";
     $thongtin=pdo_query($sql);
     return $thongtin;
+}
+function loadall_donhang(){
+    $sql ="SELECT oi.iduser,oi.idpro,oi.hinh,oi.name,oi.price, sp.email,sp.diachi,sp.sdt,sp.user,oi.phuongthuc,  oi.soluong,oi.thanhtien,oi.idbill,oi.status,oi.id
+FROM cart oi
+JOIN user sp ON oi.iduser = sp.id
+GROUP BY oi.iduser, oi.name,oi.idpro,oi.price;
+";
+    return pdo_query($sql);
 }
 ?>

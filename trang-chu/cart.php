@@ -58,6 +58,8 @@
                                 <th class="text-right">Tổng</th>
                                 <th class="text-right" style="margin-left:10px;">Xóa</th>
                             </tr>
+                            
+
                             <?php 
                                 $i=0;
                                 $tong=0;
@@ -89,6 +91,19 @@
                                     <td></td>
                                 ';
                             ?>
+
+                            <tr>
+                                <td>Phương thức thanh toán</td>
+                                <td>
+                                    <label>
+                                        <input type="radio" name="phuongthuc" value="1" checked> Tiền mặt
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="phuongthuc" value="2"> Chuyển khoản
+                                    </label>
+                                </td>
+                            </tr>
+
                         </thead>
                         <tbody>
                         </tbody>

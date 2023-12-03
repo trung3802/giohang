@@ -16,12 +16,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['place_order'])) {
         $thanhtien = $cartItem[2] * $cartItem[3];
         $idbill = 0; // You may need to replace this with the actual bill ID
         $status = 'Pending'; 
+        $phuongthuc = $_POST['phuongthuc'];
+
 
        
         // $sql = "INSERT INTO `cart` (`iduser`, `idpro`, `hinh`, `name`, `price`, `soluong`, `thanhtien`, `idbill`) 
         //         VALUES ('$iduser', '$idpro', '$hinh', '$name', '$price', '$soluong', '$thanhtien', '$idbill')";
-                 $sql = "INSERT INTO `cart` (`iduser`, `idpro`, `hinh`, `name`, `price`, `soluong`, `thanhtien`, `idbill`, `status`) 
-                 VALUES ('$iduser', '$idpro', '$hinh', '$name', '$price', '$soluong', '$thanhtien', '$idbill', '$status')";
+                 $sql = "INSERT INTO `cart` (`iduser`, `idpro`, `hinh`, `name`, `price`, `soluong`, `thanhtien`, `idbill`, `status`,`phuongthuc`) 
+                 VALUES ('$iduser', '$idpro', '$hinh', '$name', '$price', '$soluong', '$thanhtien', '$idbill', '$status', '$phuongthuc')";
          
         
         // Execute the query
