@@ -33,11 +33,28 @@ function loadall_thongtin(){
     return $thongtin;
 }
 function loadall_donhang(){
-    $sql ="SELECT oi.iduser,oi.idpro,oi.hinh,oi.name,oi.price, sp.email,sp.diachi,sp.sdt,sp.user,oi.phuongthuc,  oi.soluong,oi.thanhtien,oi.idbill,oi.status,oi.id
-FROM cart oi
-JOIN user sp ON oi.iduser = sp.id
-GROUP BY oi.iduser, oi.name,oi.idpro,oi.price;
-";
+    $sql = "SELECT
+                oi.iduser,
+                oi.idpro,
+                oi.hinh,
+                oi.name,
+                oi.price,
+                sp.email,
+                sp.diachi,
+                sp.sdt,
+                sp.user,
+                oi.phuongthuc,
+                oi.soluong,
+                oi.thanhtien,
+                oi.idbill,
+                oi.status,
+                oi.id
+            FROM
+                cart oi
+            JOIN
+                user sp ON oi.iduser = sp.id";
     return pdo_query($sql);
 }
+?>
+
 ?>
